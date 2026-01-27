@@ -1,0 +1,6 @@
+# source /Users/karangautam/Desktop/LangGraph/myenv/bin/activate
+# session_state -> dict -> it didn't get empty when your press enter happen only when u refresh
+
+
+A checkpoint captures the graph’s state at a specific moment. 
+This includes config, metadata, current channel values, which node(s) will run next, and pending tasks. 
