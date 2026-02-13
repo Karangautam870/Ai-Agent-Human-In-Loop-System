@@ -1,2 +1,3 @@
-*.txt
-*.md
+# Ignore these specific patterns if needed in future
+# *.txt
+# *.md
