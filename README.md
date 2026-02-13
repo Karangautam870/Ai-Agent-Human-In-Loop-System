@@ -3,6 +3,8 @@
 ## Overview
 This folder contains a conversational AI chatbot built with LangGraph and Streamlit. It wires a LangGraph state machine to a Gemini model, supports multi-threaded conversations, and streams responses in real time.
 
+> [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ai-agent-human-in-loop-system-karangautam870.streamlit.app/)
+
 ## Features
 - Multi-thread support for managing multiple conversation threads.
 - State management with LangGraph for workflow orchestration.
