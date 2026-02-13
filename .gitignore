@@ -1,20 +1,16 @@
-# Virtual Environment
-myenv/
-venv/
-env/
+# Ignore everything at the root
+/*
 
-# Python
+# Except the langraph_web folder
+!/langraph_web/
+
+# But ignore Python cache and env files inside langraph_web
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
-
-# Environment variables
 .env
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
 
 # OS files
 .DS_Store
