@@ -19,30 +19,84 @@ This folder contains a conversational AI chatbot built with LangGraph and Stream
 - Added utility functions for thread management and loading prior state from LangGraph.
 
 ## Tech Stack
-- LangGraph
-- LangChain (Google Generative AI)
-- Streamlit
-- Google Gemini (gemini-2.5-flash)
-- Python 3.13
+
+- **LangGraph**: State machine and workflow orchestration
+- **LangChain**: LLM framework and integrations
+- **Streamlit**: Interactive web interface
+- **Google Gemini**: AI model (gemini-2.5-flash)
+- **Python 3.13**: Core language
 
 ## Setup
-1. Create and activate a virtual environment.
-2. Install dependencies:
-   - `pip install langchain langchain-google-genai langgraph streamlit python-dotenv`
-3. Create a `.env` file and add your API key:
-   - `GOOGLE_API_KEY=your-google-api-key-here`
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Karangautam870/Ai-Agent-Human-In-Loop-System.git
+cd Ai-Agent-Human-In-Loop-System
+```
+
+2. Create a virtual environment:
+```bash
+python -m venv myenv
+source myenv/bin/activate  # On Windows: myenv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install langchain langchain-google-genai langgraph streamlit python-dotenv
+```
+
+4. Create `.env` file:
+```bash
+cp .env.example .env
+```
+
+5. Add your API keys to `.env`:
+```
+GOOGLE_API_KEY=your-google-api-key-here
+```
+
+Get your Google API key from: https://makersuite.google.com/app/apikey
 
 ## Running Locally
-- From this folder:
-  - `streamlit run frontend.py`
+
+```bash
+cd langraph_web
+streamlit run frontend.py
+```
+
+## Deployment on Streamlit Cloud
+
+1. Push your code to GitHub (without .env file)
+2. Go to [Streamlit Cloud](https://share.streamlit.io/)
+3. Deploy from GitHub repository
+4. Add your API keys in **Secrets** section:
+```toml
+GOOGLE_API_KEY = "your-google-api-key-here"
+```
+
+## Project Structure
+
+```
+├── langraph_web/
+│   ├── bot_backend.py   # LangGraph workflow and state management
+│   ├── frontend.py      # Streamlit UI 
+├── .env.example         # Example environment variables
+├── .gitignore          # Git ignore rules
+└── README.md           # This file
+```
 
 ## Future Enhancements
-- Persistent storage for conversation history (database or file-based checkpointing).
-- Human-in-the-loop integration.
-- Authentication and per-user chat isolation.
-- System prompt configuration and model selection in the UI.
-- Conversation rename/delete actions in the sidebar.
-- Robust error handling for API failures and streaming interruptions.
-- Telemetry: basic analytics on message counts and response latency.
-- UI polishing: theming, message timestamps, and typing indicators.
-- Deployment: containerized setup (Docker) and cloud hosting.
+
+- [ ] Human-in-the-Loop integration
+- [ ] Persistent database storage (PostgreSQL/SQLite)
+- [ ] Multi-agent workflows
+- [ ] Custom tool integration
+- [ ] Advanced conversation analytics
+
+## License
+
+MIT
+
+## Author
+
+Karan Gautam
