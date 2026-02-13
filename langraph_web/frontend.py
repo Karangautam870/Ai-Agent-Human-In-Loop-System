@@ -3,7 +3,7 @@ from bot_backend import chatbot
 import streamlit as st
 import uuid
 
-# **************************************** utility functions *******************************
+# utility functions
 
 def generate_thread_id():
     # generate a new thread id
@@ -23,7 +23,7 @@ def load_conversation(thread_id):
     state = chatbot.get_state(config={'configurable': {'thread_id': thread_id}})
     return state.values.get('message', [])
 
-# **************************************** Session Setup (Unified Initialization) ******************************
+ # Session Setup
 
 defaults = {
     'message_history': [],
@@ -39,7 +39,7 @@ for key, default in defaults.items():
 CONFIG = {'configurable': {'thread_id': st.session_state['thread_id']}}
 
 
-# **************************************** Sidebar UI *********************************
+#  Sidebar UI
 
 st.sidebar.title('LangGraph Chatbot')
 
@@ -60,9 +60,9 @@ for thread_id in st.session_state['chat_threads'][::-1]:  # newest first
             
         st.session_state['message_history'] = temp_message
 
-# **************************************** Main UI ************************************
+ # Main UI 
 
-# Display chat history
+# chat history
 for msg in st.session_state['message_history']:
     with st.chat_message(msg['role']):
         st.text(msg['content'])
